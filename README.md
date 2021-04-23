@@ -1,2 +1,2 @@
 # InfinityChest
-# InfinityChest developed by IgnitusCo for InfinityMC/Sigilmine
+InfinityChest developed by IgnitusCo for InfinityMC/Sigilmine
