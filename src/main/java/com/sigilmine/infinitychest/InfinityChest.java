@@ -43,10 +43,10 @@ public final class InfinityChest extends JavaPlugin {
             return;
         }
         if (getServer().getPluginManager().isPluginEnabled("LuckPerms")) {
-            cs.sendMessage(ChatColor.GREEN + "[InfinityChest] LuckPerms found. Enabling capabilities");
+            cs.sendMessage(ChatColor.GREEN + "[InfinityChest] LuckPerms found. Enabling capabilities!");
             setupLuckPerms();
         } else {
-            cs.sendMessage(ChatColor.YELLOW + "[InfinityChest] LuckPerms not found. Disabling capabilities");
+            cs.sendMessage(ChatColor.YELLOW + "[InfinityChest] LuckPerms not found. Disabling capabilities!");
         }
 
         dataFile = new DataFile();
