@@ -1,6 +1,7 @@
 package com.sigilmine.infinitychest.util;
 
 import com.sigilmine.infinitychest.InfinityChest;
+import org.apache.commons.lang.WordUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
@@ -35,8 +36,11 @@ public class MessageUtil {
     }
 
     public static String getFriendlyMaterialName(Material material) {
-        return material.toString().toLowerCase().replaceAll("_", " ");
+        String name = material.toString().toLowerCase().replaceAll("_", " ");
+        name = WordUtils.capitalize(name);
+        return name;
     }
+
     static {
         suffixes.put(1_000L, "k");
         suffixes.put(1_000_000L, "M");

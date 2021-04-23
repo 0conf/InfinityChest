@@ -48,6 +48,10 @@ public class SubGive implements SubCommand {
             player.sendMessage(MessageUtil.getMessage(path + "invalid-player"));
             return;
         }
+        if (target.getName().equals(player.getName())) {
+            player.sendMessage(MessageUtil.getMessage(path + "own-player"));
+            return;
+        }
         Material material = Material.matchMaterial(args[1]);
         if (material == null) {
             player.sendMessage(MessageUtil.getMessage(path + "unknown-item"));
@@ -85,7 +89,7 @@ public class SubGive implements SubCommand {
             target.sendMessage(MessageUtil.getMessage(path + "item-received",
                     "%player%", player.getName(),
                     "%amount%", Long.toString(quantity),
-                    "%material%", material.toString()));
+                    "%material%", MessageUtil.getFriendlyMaterialName(material)));
             if (item.getAmount() <= 0)
                 chest.getItems().remove(item);
             return;

@@ -6,7 +6,7 @@
 
     <groupId>com.sigilmine</groupId>
     <artifactId>InfinityChest</artifactId>
-    <version>1.10.1</version>
+    <version>1.10.6</version>
     <packaging>jar</packaging>
 
     <name>InfinityChest</name>

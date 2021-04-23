@@ -7,6 +7,7 @@ import com.sigilmine.infinitychest.util.MessageUtil;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.types.InheritanceNode;
+import net.luckperms.api.node.types.PermissionNode;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -58,7 +59,7 @@ public class SubAddSlots implements SubCommand {
     private void onCommand(CommandSender sender, String[] args) {
         final LuckPerms luckPerms = InfinityChest.getLuckPerms();
         if (luckPerms == null) {
-            sender.sendMessage(MessageUtil.format("&cTHIS COMMAND IS DISABLED."));
+            sender.sendMessage(MessageUtil.format("&c[!] LuckPerms is disabled! Enable it to use this."));
             return;
         }
         final String path = "commands.addslots.";
@@ -89,7 +90,8 @@ public class SubAddSlots implements SubCommand {
             sender.sendMessage(MessageUtil.getMessage(path + "error"));
             return;
         }
-        user.data().add(InheritanceNode.builder("infinitychest.slots." + newSlots).value(true).build());
+        user.data().remove(PermissionNode.builder("infinitychest.slots." + currentSlots).value(true).build());
+        user.data().add(PermissionNode.builder("infinitychest.slots." + newSlots).value(true).build());
         luckPerms.getUserManager().saveUser(user);
         sender.sendMessage(MessageUtil.getMessage(path + "success",
                 "%amount%", Integer.toString(amount),

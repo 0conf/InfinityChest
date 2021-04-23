@@ -44,7 +44,7 @@ public class SubSell implements SubCommand {
     @Override
     public void onCommandByPlayer(Player player, String[] args) {
         final String path = "commands.sell.";
-        if (args.length != 2) {
+        if (args.length < 2) {
             player.sendMessage(MessageUtil.getMessage(path + "insufficient-arguments"));
             return;
         }
@@ -54,21 +54,29 @@ public class SubSell implements SubCommand {
             return;
         }
         long quantity;
-        try {
-            quantity = Long.parseLong(args[1]);
-        } catch (NumberFormatException nfe) {
-            player.sendMessage(MessageUtil.getMessage(path + "invalid-quantity"));
-            return;
-        }
         InfiniteChest chest = ChestUtil.getInfiniteChest(player);
         InfiniteItem item = ChestUtil.getInfiniteItem(chest, material);
         if (item == null) {
             player.sendMessage(MessageUtil.getMessage(path + "invalid-item"));
             return;
         }
+        if (args[1].equalsIgnoreCase("All")) {
+            quantity = item.getAmount();
+        } else {
+            try {
+                quantity = Long.parseLong(args[1]);
+            } catch (NumberFormatException nfe) {
+                player.sendMessage(MessageUtil.getMessage(path + "invalid-quantity"));
+                return;
+            }
+        }
+        if (quantity <= 0) {
+            player.sendMessage(MessageUtil.getMessage(path + "invalid-quantity"));
+            return;
+        }
         if (quantity > item.getAmount()) {
             //player.sendMessage(MessageUtil.getMessage(path + "insufficient-items"));
-            player.sendMessage(MessageUtil.getMessage(path + "insufficient-items", "%current-amount%", quantity));
+            player.sendMessage(MessageUtil.getMessage(path + "insufficient-items", "%amount%", quantity));
             return;
         }
         if (item.getSingleValue() <= 0) {

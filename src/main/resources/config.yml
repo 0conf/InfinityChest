@@ -42,7 +42,8 @@ messages:
     give:
       insufficient-arguments: '&cInsufficient Arguments provided. Please use command like &e/infinitychest give (player) (item) (amount)'
       invalid-player: '&cUnable to find a player with that name.'
-      unknown-item: '&Unable to find an item with that name.'
+      unknown-item: '&cUnable to find an item with that name.'
+      own-player: '&cYou cannot give items to yourself!'
       invalid-quantity: '&cPlease enter a valid number for quantity'
       invalid-item: '&cYou currently do not have that item in your infinity chest.'
       insufficient-items: '&cYou do not have enough items in your infinity chest to complete this request.'

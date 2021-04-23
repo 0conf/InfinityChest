@@ -63,7 +63,7 @@ public class InfiniteMenu implements Menu {
             ItemStack itemStack = new ItemStack(material);
             ItemMeta itemMeta = itemStack.getItemMeta();
             itemMeta.setDisplayName(format(itemName,
-                    "%name%", material.toString().replace("_", " ").toUpperCase()));
+                    "%name%", MessageUtil.getFriendlyMaterialName(material)));
             itemMeta.setLore(format(itemLore,
                     "%quantity%", MessageUtil.longToString(infiniteItem.getAmount()),
                     "%single_value%", MessageUtil.formatDouble(infiniteItem.getSingleValue()),
@@ -128,7 +128,7 @@ public class InfiniteMenu implements Menu {
 
             viewingPlayer.sendMessage(MessageUtil.getMessage("chest.item-withdrawn",
                     "%amount%", Integer.toString(withdraw),
-                    "%material%", material.toString(),
+                    "%material%", MessageUtil.getFriendlyMaterialName(material),
                     "%remaining%", infiniteItem.getAmount()));
             if (infiniteItem.getAmount() <= 0)
                 infiniteChest.getItems().remove(infiniteItem);

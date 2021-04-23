@@ -27,14 +27,17 @@ public final class InfinityChest extends JavaPlugin {
     private WorthFile worthFile;
 
     private CommandSender cs = Bukkit.getConsoleSender();
-
+    /**
+     * @author Jane Smith <jsmith@example.com>
+     */
     @Override
     public void onEnable() {
         instance = this;
-        cs.sendMessage(ChatColor.GREEN + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
-        cs.sendMessage(ChatColor.GREEN + "  Enabling InfinityChest");
-        cs.sendMessage(ChatColor.GREEN + " Developed by Ignitus Co.");
-        cs.sendMessage(ChatColor.GREEN + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
+        cs.sendMessage(ChatColor.DARK_AQUA + "____________________________________");
+        cs.sendMessage(ChatColor.AQUA + " InfinityChest");
+        cs.sendMessage(ChatColor.GRAY + " Version: " + this.getDescription().getVersion());
+        cs.sendMessage(ChatColor.GRAY + " Developed by Ignitus Co.");
+        cs.sendMessage(ChatColor.DARK_AQUA + "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
         saveDefaultConfig();
 
         if (!setupEconomy()) {
@@ -43,7 +46,7 @@ public final class InfinityChest extends JavaPlugin {
             return;
         }
         if (getServer().getPluginManager().isPluginEnabled("LuckPerms")) {
-            cs.sendMessage(ChatColor.GREEN + "[InfinityChest] LuckPerms found. Enabling capabilities!");
+            cs.sendMessage(ChatColor.AQUA + "[InfinityChest] LuckPerms found. Enabling capabilities!");
             setupLuckPerms();
         } else {
             cs.sendMessage(ChatColor.YELLOW + "[InfinityChest] LuckPerms not found. Disabling capabilities!");
@@ -60,10 +63,9 @@ public final class InfinityChest extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        cs.sendMessage(ChatColor.RED + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
-        cs.sendMessage(ChatColor.RED + "   Disabling InfinityChest");
-        cs.sendMessage(ChatColor.RED + "  Developed by Ignitus Co.");
-        cs.sendMessage(ChatColor.RED + ChatColor.STRIKETHROUGH.toString() + "---------------------------");
+        cs.sendMessage(ChatColor.DARK_AQUA + "____________________________________");
+        cs.sendMessage(ChatColor.AQUA + " Disabling InfinityChest...");
+        cs.sendMessage(ChatColor.DARK_AQUA + "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
         ChestUtil.getInfiniteChests().forEach(DataUtil::updateInfiniteChest);
     }
 
