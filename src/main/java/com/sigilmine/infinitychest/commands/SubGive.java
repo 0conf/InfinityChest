@@ -80,7 +80,7 @@ public class SubGive implements SubCommand {
             player.sendMessage(MessageUtil.getMessage(path + "success",
                     "%player%", target.getName(),
                     "%amount%", Long.toString(quantity),
-                    "%material%", material.toString(),
+                    "%material%", MessageUtil.getFriendlyMaterialName(material),
                     "%remaining%", MessageUtil.longToString(item.getAmount())));
             target.sendMessage(MessageUtil.getMessage(path + "item-received",
                     "%player%", player.getName(),

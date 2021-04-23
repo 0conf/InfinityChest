@@ -68,7 +68,7 @@ public class SubSell implements SubCommand {
         }
         if (quantity > item.getAmount()) {
             //player.sendMessage(MessageUtil.getMessage(path + "insufficient-items"));
-            player.sendMessage(MessageUtil.getMessage(path + "target-full", "%current-amount%", quantity));
+            player.sendMessage(MessageUtil.getMessage(path + "insufficient-items", "%current-amount%", quantity));
             return;
         }
         if (item.getSingleValue() <= 0) {

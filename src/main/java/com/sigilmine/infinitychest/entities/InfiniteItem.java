@@ -29,12 +29,12 @@ public class InfiniteItem {
         final FileConfiguration worthConfig = worthFile.getFileConfiguration();
         final ConfigurationSection section = worthConfig.getConfigurationSection("worth");
         if (section == null)
-            return -1;
+            return 0;
         String path = section.getKeys(false).stream()
                 .filter(item -> item.equalsIgnoreCase(material.name()))
                 .findFirst().orElse(null);
         if (path == null)
-            return -1;
+            return 0;
         return worthConfig.getDouble("worth." + path);
     }
 

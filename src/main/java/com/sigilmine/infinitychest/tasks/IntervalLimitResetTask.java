@@ -9,7 +9,7 @@ public class IntervalLimitResetTask extends BukkitRunnable {
 
     @Override
     public void run() {
-        //InfinityChest.get().getCs().sendMessage(ChatColor.AQUA + "[InfinityChest] Limits reset!");
+        InfinityChest.get().getCs().sendMessage(ChatColor.AQUA + "[InfinityChest] Successfully reset limits!");
         LimitUtil.resetLimits();
     }
 
