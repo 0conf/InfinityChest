@@ -1,0 +1,24 @@
+name: InfinityChest
+version: ${project.version}
+main: com.sigilmine.infinitychest.InfinityChest
+api-version: "1.13"
+authors: ['Ignitus Co', 'Hyronical']
+description: Allow players to store infite items
+website: https://ignitus.co/
+softdepend: [CMI, Vault, LuckPerms]
+commands:
+  infinitychest:
+    description: Access your infinitychest
+    aliases: [ic]
+
+permissions:
+  infinitychest.access:
+    description: Grants permission to own an infinitychest
+  infinitychest.sell:
+    description: Grants access to sell items from an infinitychest
+  infinitychest.give:
+    description: Grants access to give another player items from your infinity chest
+  infinitychest.autocollect:
+    description: Grants access to toggle whether items should automatically be stored to your Infinity Chest
+  infinitychest.slots.x:
+    description: Sets the max amount of slots a player can have

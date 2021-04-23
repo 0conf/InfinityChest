@@ -1,0 +1,66 @@
+package com.sigilmine.infinitychest.commands;
+
+import com.sigilmine.infinitychest.InfinityChest;
+import com.sigilmine.infinitychest.entities.Command;
+import com.sigilmine.infinitychest.entities.InfiniteMenu;
+import com.sigilmine.infinitychest.entities.SubCommand;
+import com.sigilmine.infinitychest.util.ChestUtil;
+import com.sigilmine.infinitychest.util.MessageUtil;
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class InfinityCMD extends Command {
+
+    public InfinityCMD(InfinityChest main) {
+        super(main, "infinitychest");
+        this
+                .registerSubCommand(new SubAddSlots())
+                .registerSubCommand(new SubGive())
+                .registerSubCommand(new SubSell())
+                .registerSubCommand(new SubAutoCollect())
+                .registerSubCommand(new SubEmpty())
+                .registerSubCommand(new SubView())
+        ;
+    }
+
+    @Override
+    public void onUse(CommandSender sender) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(MessageUtil.getMessage("commands.no-console"));
+            return;
+        }
+        final Player player = (Player) sender;
+        if (!player.hasPermission("infinitychest.access")) {
+            player.sendMessage(MessageUtil.getMessage("commands.no-permission"));
+            return;
+        }
+        if (ChestUtil.getMaxSlots(player) <= 0) {
+            player.sendMessage(MessageUtil.getMessage("commands.no-slots"));
+            return;
+        }
+        player.openInventory(new InfiniteMenu(player, true).getInventory());
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args) {
+        if (args.length == 1) {
+            return this.getSubCommands().stream()
+                    .map(SubCommand::getName)
+                    .filter(subCommand -> subCommand.toLowerCase().startsWith(args[0].toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+        if (args.length == 2) {
+            if (args[0].equalsIgnoreCase("give") || args[0].equalsIgnoreCase("empty") || args[0].equalsIgnoreCase("view")) {
+                return Bukkit.getOnlinePlayers().stream()
+                        .map(Player::getName)
+                        .filter(name -> name.toLowerCase().startsWith(args[1].toLowerCase()))
+                        .collect(Collectors.toList());
+            }
+        }
+        return null;
+    }
+}

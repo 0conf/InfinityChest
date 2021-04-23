@@ -1,0 +1,73 @@
+# List of items can be found here https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+blacklisted-items:
+  - 'ENCHANTED_BOOK'
+
+main-menu:
+  title: '&5You are viewing your Infinity Chest.'
+  size: 27
+
+  infinite-item:
+    name: '&f%name%'
+    lore:
+      - '&fQuantity&7: %quantity%'
+      - '&fSingle Value&7: %single_value%'
+      - '&fTotal Value&7: %total_value%'
+
+  locked-item:
+    name: '&cLOCKED SLOT'
+    material: 'RED_STAINED_GLASS_PANE'
+    lore:
+      - '&7You currently cannot use this slot.'
+
+tasks:
+  # In ticks
+  limit-reset: 2400
+
+messages:
+  commands:
+    no-console: '&cConsole cannot use this command.'
+    no-permission: '&cYou do not have permission to use this command.'
+    no-slots: '&cYou are unable to use this command at this time.'
+    invalid-subargument: '&e%argument% &cis not a valid sub-argument for this command.'
+    addslots:
+      insufficient-arguments: '&cInsufficient Arguments provided. Please use command like &e/infinitychest addslots (player) (amount)'
+      invalid-player: '&cUnable to find a player with that name.'
+      invalid-amount: '&cPlease enter a valid amount of slots to add'
+      error: "&cAn unexpected error occurred. Please try again later."
+      success: '&aSuccessfully added &e%amount% &aof slots to &e%player%&a. They now have a total of &e%total% slots'
+    empty:
+      insufficient-arguments: '&cInsufficient Arguments provided. Please use command like &e/infinitychest reset (player)'
+      invalid-player: '&cUnable to find a player with that name.'
+      success: '&aSuccessfully reset &3%player%''s infinity chest.'
+    give:
+      insufficient-arguments: '&cInsufficient Arguments provided. Please use command like &e/infinitychest give (player) (item) (amount)'
+      invalid-player: '&cUnable to find a player with that name.'
+      unknown-item: '&Unable to find an item with that name.'
+      invalid-quantity: '&cPlease enter a valid number for quantity'
+      invalid-item: '&cYou currently do not have that item in your infinity chest.'
+      insufficient-items: '&cYou do not have enough items in your infinity chest to complete this request.'
+      target-full: '&e%player% &acannot take this item'
+      success: '&aSuccessfully gave &e%player% %amount% %material%&a. You now have &e%remaining% &aleft in storage.'
+      item-received: '&aYou received &e%amount% %material% &afrom &e%player%.'
+    sell:
+      insufficient-arguments: '&cInsufficient Arguments provided. Please use command like &e/infinitychest sell (item) (amount)'
+      unknown-item: '&Unable to find an item with that name.'
+      invalid-quantity: '&cPlease enter a valid number for quantity'
+      invalid-item: '&cYou currently do not have that item in your infinity chest.'
+      insufficient-items: '&cYou do not have that much! You only have %amount% in your chest.'
+      illegal-item: '&cThis item cannot be sold.'
+      limit-exceeded: '&cYou have exceeded your sell limit. Please try again later'
+      error: '&cUnable to sell items at this time.'
+      success: '&aYou have sold %amount% %material% for %price% and now have %remaining% left in storage.'
+    autocollect:
+      enabled: '&aItems you pick up will now automatically go to your Infinity Chest'
+      disabled: '&aItems you pick up will no longer automatically go to your Infinity Chest'
+    view:
+      insufficient-arguments: '&cInsufficient Arguments provided. Please use command like &e/infinitychest view (player)'
+      invalid-player: '&cUnable to find a player with that name.'
+      success: "&aNow viewing %player%'s InfinityChest"
+  chest:
+    inventory-full: '&cYour inventory is full.'
+    item-withdrawn: '&aYou have withdrawn %amount% %material% and now have %remaining% left in storage.'
+    illegal-item: '&cYou may not add this item to your infinity chest.'
+    chest-full: '&cYour chest is full.'
