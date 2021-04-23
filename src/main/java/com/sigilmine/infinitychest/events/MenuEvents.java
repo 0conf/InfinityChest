@@ -7,6 +7,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.InventoryHolder;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class MenuEvents implements Listener {
 
     @EventHandler

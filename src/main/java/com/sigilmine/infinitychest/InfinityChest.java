@@ -18,7 +18,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public final class InfinityChest extends JavaPlugin {
     private static InfinityChest instance;
     private static Economy economy;
@@ -27,9 +29,6 @@ public final class InfinityChest extends JavaPlugin {
     private WorthFile worthFile;
 
     private CommandSender cs = Bukkit.getConsoleSender();
-    /**
-     * @author Jane Smith <jsmith@example.com>
-     */
     @Override
     public void onEnable() {
         instance = this;

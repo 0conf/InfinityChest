@@ -7,6 +7,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class FileManager {
 
     private InfinityChest main = InfinityChest.get();

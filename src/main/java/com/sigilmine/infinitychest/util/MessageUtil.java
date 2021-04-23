@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
-
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class MessageUtil {
 
     private static final NavigableMap<Long, String> suffixes = new TreeMap<>();

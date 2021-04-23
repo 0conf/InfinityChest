@@ -5,6 +5,9 @@ import com.sigilmine.infinitychest.util.LimitUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.scheduler.BukkitRunnable;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class IntervalLimitResetTask extends BukkitRunnable {
 
     @Override

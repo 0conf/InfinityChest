@@ -15,6 +15,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class PlayerEvents implements Listener {
 
     private static InfinityChest infinityChest = InfinityChest.get();

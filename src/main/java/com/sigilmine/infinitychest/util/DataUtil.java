@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class DataUtil {
 
     private static final DataFile dataManager = InfinityChest.get().getDataFile();

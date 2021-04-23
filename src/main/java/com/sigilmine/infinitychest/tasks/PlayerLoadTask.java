@@ -5,6 +5,9 @@ import com.sigilmine.infinitychest.util.DataUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class PlayerLoadTask extends BukkitRunnable {
 
     private final Player player;

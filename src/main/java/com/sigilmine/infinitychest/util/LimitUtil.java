@@ -7,6 +7,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.UUID;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class LimitUtil {
 
     private static HashMap<UUID, Long> limits = new HashMap<>();

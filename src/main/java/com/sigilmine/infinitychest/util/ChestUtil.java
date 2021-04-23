@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * @author DDarkInferno (Ignitus Co.)
+ */
 public class ChestUtil {
 
     private static List<InfiniteChest> infiniteChests = new ArrayList<>();
