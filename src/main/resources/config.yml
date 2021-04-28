@@ -57,7 +57,7 @@ messages:
       invalid-item: '&cYou currently do not have that item in your infinity chest.'
       insufficient-items: '&cYou do not have that much! You only have %amount% in your chest.'
       illegal-item: '&cThis item cannot be sold.'
-      limit-exceeded: '&cYou have exceeded your sell limit. Please try again later'
+      limit-exceeded: '&cYou have exceeded your sell limit. %time% minutes before your limit resets!'
       error: '&cUnable to sell items at this time.'
       success: '&aYou have sold %amount% %material% for %price% and now have %remaining% left in storage.'
     autocollect:
