@@ -35,7 +35,6 @@ public final class InfinityChest extends JavaPlugin {
         cs.sendMessage(ChatColor.DARK_AQUA + "____________________________________");
         cs.sendMessage(ChatColor.AQUA + " InfinityChest");
         cs.sendMessage(ChatColor.GRAY + " Version: " + this.getDescription().getVersion());
-        cs.sendMessage(ChatColor.GRAY + " Developed by Ignitus Co.");
         cs.sendMessage(ChatColor.DARK_AQUA + "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
         saveDefaultConfig();
 
