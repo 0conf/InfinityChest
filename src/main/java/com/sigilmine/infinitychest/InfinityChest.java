@@ -18,9 +18,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-/**
- * @author DDarkInferno (Ignitus Co.)
- */
 public final class InfinityChest extends JavaPlugin {
     private static InfinityChest instance;
     private static Economy economy;
